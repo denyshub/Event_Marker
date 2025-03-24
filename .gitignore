@@ -1,0 +1,34 @@
+# Ігнорування віртуального оточення
+venv/
+.env
+*.env
+*.venv
+
+# Ігнорування файлів бази даних SQLite
+db.sqlite3
+*.sqlite3
+
+# Ігнорування файлів кешу та міграцій
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Лог-файли
+logs/
+*.log
+nohup.out
+
+# Ігнорування файлів, що генеруються IDE
+.idea/
+.vscode/
+*.iml
+
+# Статичні та медіафайли
+staticfiles/
+media/
+
+# Docker файли
+*.docker
+*.bak
+*.swp
