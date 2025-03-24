@@ -1,0 +1,94 @@
+.header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);margin: 0;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #2563eb;
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .nav-menu {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #4b5563;
+    text-align: center;
+    height: fit-content;
+ 
+    transition: color 0.3s ease;
+  }
+  .nav-link:last-child {
+    margin-right: 0; /* Відсутність відступу після останнього елементу */
+  }
+  .nav-link:hover {
+    color: #2563eb;
+  }
+
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+      
+    }
+  
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top:64px;
+      left: 0;
+      right:  0;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 15px;
+    }
+  
+    .nav-menu.active {
+      display: flex;
+      z-index: 1000;
+  
+    }
+  }
+
+  .logout-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+  
+  .logout-btn:hover {
+    color: red;
+  }
+
+.logo-icon{
+  width: 30px;
+}

@@ -1,0 +1,417 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.event-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.event-img-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+/* Адаптація для мобільних пристроїв */
+@media screen and (max-width: 768px) {
+  .home-container {
+    padding: 10px;
+  }
+
+  .event-list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Зменшуємо мінімальну ширину картки */
+    gap: 15px;
+  }
+
+
+}
+
+/* Адаптація для дуже малих екранів (телефони в портретному режимі) */
+@media screen and (max-width: 480px) {
+  .event-list {
+    grid-template-columns: 1fr; /* В одній колонці на малих екранах */
+    gap: 10px;
+  }
+
+
+  .event-img-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  
+  .event-image {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px 10px 0 0;
+    display: block;
+  }
+  
+}
+
+
+.event-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.event-img-container a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  display: block;
+}
+
+
+
+.event-icon-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.8);
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+
+
+.event-content h3 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+}
+
+.event-details p {
+  margin: 5px 0;
+  color: #7f8c8d;
+}
+
+.info-container{
+  padding: 10px;
+
+    padding: 15px 15px 0px 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Дозволяє займати весь вільний простір */
+  
+}
+
+.description-event{
+  color: #525558;
+  font-size: 15px;
+}
+
+.line-aligner{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.event-search-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-wrapper {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: 2px solid #e0e0e0;
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #357abd;
+}
+
+.error-message {
+  color: #d9534f;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.event-card:hover {
+  transform: scale(1.02);
+}
+
+.event-name {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.event-date, 
+.event-venue {
+  color: #666;
+}
+
+.no-events {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+}
+
+.location-price-line{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+.description-event {
+  flex-grow: 1; /* Розтягує опис, щоб .location-price-line було внизу */
+}
+
+.price{
+  font-size: 15px;
+}.view-switcher {
+  display: flex;
+  margin-bottom: 10px;
+  gap: 8px;
+  padding: 8px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  width: fit-content;
+}
+
+.view-switcher button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-switcher button:hover {
+  background-color: #e5e7eb;
+}
+
+.view-switcher button.active {
+  background-color: white;
+  color: #2563eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.clear-button{
+  background-color: #f0f2f5;
+  border: none;
+}
+.filter-container{
+  width: fit-content;
+}
+.filterContainer {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.categoryFilter {
+  margin-bottom: 15px;
+}
+
+.categoryFilter label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.categoryFilter select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.categoryFilter select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.priceFilters,
+.dateFilters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.priceFilters input,
+.dateFilters input {
+  flex: 1;
+  width: 100px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.priceFilters input:focus,
+.dateFilters input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.filterActions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.filterActions button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.filterActions button:first-child {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.filterActions button:first-child:hover {
+  background-color: #3a7bd5;
+}
+
+.filterActions button:last-child {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.filterActions button:last-child:hover {
+  background-color: #e0e0e0;
+}
+
+.filterActions button:active {
+  transform: scale(0.98);
+}
+
+.filter-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.filter-toggle-btn {
+  width: 100%;
+  border: 2px solid #e0e0e0;
+  padding: 10px;
+  background-color: #ffffff;
+
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.filter-dropdown {
+  margin-top: 5px;
+  background-color: rgb(247, 247, 247);
+  border: 1px solid #ddd;
+  padding: 15px;  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filter-section,
+.price-filters,
+.date-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.price-filters input,
+.date-filters input {
+  flex: 1;
+  padding: 8px;
+}
+
+.filter-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-actions button {
+  flex: 1;
+  margin: 0 5px;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
